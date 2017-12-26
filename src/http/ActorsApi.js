@@ -1,7 +1,7 @@
-import {ApiBase} from './http/ApiBase';
+import { ApiBase } from './ApiBase';
 
 export const ActorsApi = {
-  getActorsList: function() {
-    ApiBase.get('/actors')
-  }
+    getActorsList: function() {
+        return ApiBase.get('/actors')
+    }
 }
