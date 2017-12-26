@@ -5,16 +5,12 @@
        v-for="actor of actors"
        v-bind:key="actor.id"
        >
-       <dl>
-         <dt>Name</dt>
-         <dd>{{actor.name}}</dd>
-         <dt>Id</dt>
-         <dd>{{actor.id}}</dd>
-         <dt>Max hp</dt>
-         <dd>{{actor.hp}}</dd>
-
-         <dt>Statistics</dt>
-         <dd>
+       <div class="card ">
+         <div class="card-header">
+          {{actor.name}}
+          <span class="badge badge-dark">{{actor.hp}}</span>
+         </div>
+         <div class="card-body">
            <table class="table">
              <thead class="thead-dark">
                <tr>
@@ -45,8 +41,8 @@
                </tr>
              </tbody>
            </table>
-         </dd>
-       </dl>
+         </div>
+       </div>
        </li>
     </ul>
   </div>
