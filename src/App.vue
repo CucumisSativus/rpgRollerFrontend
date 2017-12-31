@@ -3,6 +3,11 @@
     <div class="container">
       <div class='row'>
         <div class='col'>
+          <actor-form></actor-form>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col'>
           <actor-list></actor-list>
         </div>
       </div>
@@ -10,14 +15,19 @@
   </div>
 </template>
 
-<script>
-import ActorList from './components/ActorList';
+<script lang="ts">
+import Vue from 'vue'
+import Component from 'vue-class-component'
+import ActorList from './components/ActorList.vue';
+import ActorForm from './components/ActorForm.vue';
+@Component({
+    components: {
+    ActorList,
+    // ActorForm
+  }
+})
+export default class App extends Vue{
 
-export default {
-  name: 'app',
-  components: {
-    ActorList
-  },
   data() {
     return {
       msg: 'Welcome to Your Vue.js App'
