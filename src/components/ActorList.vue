@@ -47,21 +47,31 @@
     </ul>
   </div>
 </template>
-<script>
-import {ActorsApi} from '../http/ActorsApi';
-
-export default {
-  name: 'actor-list',
+<script lang="ts">
+import {ActorsApi} from '../http/ActorsApi.ts'
+import Vue from 'vue'
+import Component from 'vue-class-component'
+import { CombatActorPresenter } from '../model/CombatActor'
+@Component({
+    components: {}
+})
+export default class ActorList extends Vue{
+  
+  actors: Array<CombatActorPresenter> = []
   data() {
     return {
       actors: []
     }
-  },
+  }
+
   created() {
+    console.log("created")
     ActorsApi.getActorsList().then(resp =>{
-      console.log(resp.data)
-      this.actors = resp.data
+      console.log(resp)
+      this.actors = resp
     })
   }
 }
+
+
 </script>
